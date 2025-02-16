@@ -64,7 +64,6 @@
     "eslint-plugin-wix-editor": "^3.3.0",
     "globals": "^15.15.0",
     "microbundle": "^0.15.1",
-    "node-watchexec": "github:longdog/node-watchexec",
     "prettier": "^3.5.1",
     "semantic-release": "^24.2.3",
     "semantic-release-monorepo": "^8.0.2",
