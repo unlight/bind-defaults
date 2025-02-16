@@ -1,4 +1,4 @@
-# bind-merge
+# bind-defaults
 
 # Similar projects
 

@@ -1,5 +1,9 @@
-import { expect, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
+import { bindDefaults } from './index';
 
-it('smoke', () => {
-  expect(1).toEqual(expect.anything());
+it('first bind', () => {
+  const fn = ({ a }) => a;
+  const boundFunction = bindDefaults(fn, { a: 'A' });
+  const result = boundFunction.apply(null, [] as any);
+  expect(result).toEqual('A');
 });
