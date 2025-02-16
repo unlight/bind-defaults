@@ -2,12 +2,18 @@
   "name": "bind-defaults",
   "version": "0.0.0-dev",
   "license": "MIT",
-  "description": "",
+  "description": "A utility for enhancing functions by binding default values to their first parameter",
   "keywords": [
     "bind",
-    "merge-context",
     "bind-merge",
-    "bind-with-context"
+    "bind-with-context",
+    "default-parameters",
+    "defaults",
+    "merge",
+    "merge-context",
+    "option-normalization",
+    "options",
+    "options-merging"
   ],
   "type": "module",
   "module": "./dist/index.js",

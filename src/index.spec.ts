@@ -11,14 +11,14 @@ it('first bind', () => {
 });
 
 it('first bind with call', () => {
-  const testFunction = ({ a }: { a?: string }) => a;
+  const testFunction = ({ a }: { a: string }) => a;
   const boundFunction = bindDefaults(testFunction, { a: 'A' });
   const result = boundFunction({ a: 'Bound A' });
   expect(result).toEqual('Bound A');
 });
 
 it('second bind', () => {
-  const testFunction = ({ a, b }: { a?: string; b?: string }) => ({ a, b });
+  const testFunction = ({ a, b }: { a: string; b: string }) => ({ a, b });
   const boundFunction1 = bindDefaults(testFunction, { a: 'A' });
   const boundFunction2 = bindDefaults(boundFunction1, { b: 'B' });
   const result = boundFunction2({});
@@ -41,3 +41,12 @@ it('triple bind', () => {
   const result = boundFunction3({});
   expect(result).toEqual({ a: 'A3', b: 'B', c: '3' });
 });
+
+// it.skip('class methods', () => {
+//   class API {
+//     @bindDefaults({ format: 'json' })
+//     fetch(options: { endpoint: string; format: string }) {
+//       /* ... */
+//     }
+//   }
+// });

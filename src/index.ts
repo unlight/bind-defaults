@@ -11,18 +11,18 @@ export function bindDefaults<
     options: FirstParameter<F>,
     ...args: TailParameters<F>
   ) => ReturnType<F>,
->(originalFunction: F, defaults: FirstParameter<F>) {
+>(originalFunction: F, defaults: Partial<FirstParameter<F>>) {
   const originalFunctionName = originalFunction.name;
   const boundFunction = function (
     this: unknown,
-    options: FirstParameter<F>,
+    options: Partial<FirstParameter<F>>,
     ...args: TailParameters<F>
   ) {
-    const mergedOptions: FirstParameter<F> = Object.assign(
+    const mergedOptions = Object.assign(
       {},
       defaults,
       options,
-    );
+    ) as FirstParameter<F>;
 
     return originalFunction.call(this, mergedOptions, ...args);
   };
